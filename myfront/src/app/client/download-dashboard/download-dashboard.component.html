@@ -1,0 +1,33 @@
+
+
+    <body>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="bg"></div>
+<br><br><br><br>
+<div style="text-align:center;">
+<table  mdbTable >
+    <thead class="table table-dark">
+        <tr >
+          <th *ngFor="let head of headElements" scope="col" >{{head}} </th>
+        </tr>
+      </thead>
+      <tbody>
+  <tr class="color" *ngFor="let e of t">
+    <td >{{ e.nomdash }}</td>
+    <td>{{ e.dateSend }}</td>
+    <td> <a href="{{download(e.filename)}}">
+      <i class="material-icons" style="font-size: 35px;">
+        get_app
+        </i></a></td>
+        <td>  <a class="action-btn" (click)="deleteDash(e)">
+            <i class="material-icons">
+                delete</i>
+          </a></td>
+
+  </tr>
+</tbody>
+</table>
+</div>
+</body>

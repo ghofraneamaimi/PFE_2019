@@ -1,0 +1,123 @@
+<br /><br /><br />
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" type="image/x-icon" href="favicon.ico">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+  </head>
+  <body class="id" class="container">
+    <div style="text-align:center;">
+      <span class="bt">You are now logged in</span>
+    </div>
+    <br /><br />
+    <table>
+      <td><i class="material-icons" style="font-size: 150px;">account_circle</i></td>
+
+      <td>
+        <div *ngIf="c">
+          <h3>Hello {{ c.name }} password {{ c.password }}</h3>
+        </div>
+      </td>
+    </table>
+    <br />
+    <div  class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p class="text-center">Change Password</p>
+        </div>
+      </div>
+      <div  class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <p class="text-center">
+            Use the form below to change your password. Your password cannot be
+            the same as your username.
+          </p>
+          <!--<form method="post" id="passwordForm">-->
+            <input
+              type="password"
+              class="input-lg form-control"
+              name="password1"
+              id="password1"
+              placeholder="New Password"
+              autocomplete="off"
+              [(ngModel)]="pwd1"
+            />
+            <div class="row">
+              <div class="col-sm-6">
+                <span
+                  id="8char"
+                  class="glyphicon glyphicon-remove"
+                  style="color:#FF0004;"
+                ></span>
+                8 Characters Long<br />
+                <span
+                  id="ucase"
+                  class="glyphicon glyphicon-remove"
+                  style="color:#FF0004;"
+                ></span>
+                One Uppercase Letter
+              </div>
+              <div class="col-sm-6">
+                <span
+                  id="lcase"
+                  class="glyphicon glyphicon-remove"
+                  style="color:#FF0004;"
+                ></span>
+                One Lowercase Letter<br />
+                <span
+                  id="num"
+                  class="glyphicon glyphicon-remove"
+                  style="color:#FF0004;"
+                ></span>
+                One Number
+              </div>
+            </div>
+            <input
+              type="password"
+              class="input-lg form-control"
+              name="password2"
+              id="password2"
+              placeholder="Repeat Password"
+              autocomplete="off"
+              [(ngModel)]="pwd2"
+            />
+            <div class="row">
+              <div class="col-sm-12">
+                <span
+                  id="pwmatch"
+                  class="glyphicon glyphicon-remove"
+                  style="color:#FF0004;"
+                ></span>
+                Passwords Match
+              </div>
+            </div>
+            <!--<input
+              type="submit"
+              class="col-xs-12 btn btn-primary btn-load btn-lg"
+              data-loading-text="Changing Password..."
+              value="Change Password"
+            />-->
+            <button  class="col-xs-12 btn btn-primary btn-load btn-lg"
+            data-loading-text="Changing Password..." (click)='updateMdp()' [disabled]="pwd1==''||(pwd1!=pwd2)">change</button>
+          <!--</form>-->
+        </div>
+        <!--/col-sm-6-->
+      </div>
+      <!--/row-->
+    </div>
+  </body>
+</html>
+<!--
+</div>
+<div style="text-align:center">
+    <h1>
+      Welcome to Angular Material App <mat-icon>mood</mat-icon>
+    </h1>
+  </div>-->

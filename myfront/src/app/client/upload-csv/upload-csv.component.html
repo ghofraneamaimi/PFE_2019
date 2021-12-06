@@ -1,0 +1,104 @@
+
+<br/>
+<body>
+  <div class="bg"></div>
+ <div style="text-align:center;">
+<table  mdbTable >
+  <thead class="table table-dark">
+    <tr >
+      <th *ngFor="let head of headElements" scope="col" >{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="color" mdbTableCol *ngFor="let e of t">
+         <td >{{e.nomdoc }}</td>
+      <td>{{ e.dateupload }}</td>
+
+    </tr>
+  </tbody>
+</table>
+
+
+<br/>
+
+<div class="p-grid">
+    <div class="p-col-12 p-md-6 p-lg-3">
+        <p-panel header="Godfather">
+          <p-fieldset legend="Article" [toggleable]="true">
+            <table align="center">
+              <br/>
+
+                Title <input type="text" name="username" [(ngModel)]="csv.nomdoc"><br/><br/>
+                Taille <input type="text" name="taille" [(ngModel)]="csv.taille"><br/><br/>
+                <input type="hidden" name="username" [(ngModel)]="csv.client_id"><br/><br/>
+                <input type="file" accept=".csv" name="filetoupload" (change)="onFileChange($event)" multiple/><br/><br/>
+                <p-button icon="pi pi-check" iconPos="right" label="Valid" (click)="validArticlePackage()"></p-button>
+                <button pButton type="button" label="Upload" icon="pi pi-upload" class="ui-button-success" (click)="save()" ></button>
+               <br/>
+              </table>
+          </p-fieldset>
+        </p-panel>
+    </div>
+    <div class="p-col-12 p-md-6 p-lg-3">
+        <p-panel header="Godfather">
+          <p-fieldset legend="Vente" [toggleable]="true">
+            <table align="center">
+              <br/>
+
+                Title <input type="text" name="username" [(ngModel)]="csv.nomdoc"><br/><br/>
+                Taille <input type="text" name="taille" [(ngModel)]="csv.taille"><br/><br/>
+                <input type="hidden" name="username" [(ngModel)]="csv.client_id"><br/><br/>
+                <input type="file" accept=".csv" name="filetoupload" (change)="onFileChange($event)" multiple/><br/><br/>
+                <p-button icon="pi pi-check" iconPos="right" label="Valid" (click)="validVentePackage()"></p-button>
+                <button pButton type="button" label="Upload" icon="pi pi-upload" class="ui-button-success" (click)="save()" ></button>
+               <br/>
+              </table>
+          </p-fieldset>
+        </p-panel>
+    </div>
+    <div class="p-col-12 p-md-6 p-lg-3">
+        <p-panel header="Godfather">
+          <p-fieldset legend="Fournisseur" [toggleable]="true">
+            <table  align="center">
+              <br/>
+
+                Title <input type="text" name="username" [(ngModel)]="csv.nomdoc"><br/><br/>
+                Taille <input type="text" name="taille" [(ngModel)]="csv.taille"><br/><br/>
+                 <input type="hidden" name="username" [(ngModel)]="csv.client_id"><br/><br/>
+                <input type="file" accept=".csv"  name="filetoupload" (change)="onFileChange($event)" multiple/><br/><br/>
+                <p-button icon="pi pi-check" iconPos="right" label="Valid" (click)="validfournisseurPackage()" ></p-button>
+                <button pButton type="button" label="Upload" icon="pi pi-upload" class="ui-button-success" (click)="save()" ></button>
+
+               <br/>
+              </table>
+          </p-fieldset>
+        </p-panel>
+    </div>
+    <div class="p-col-12 p-md-6 p-lg-3">
+        <p-panel header="Godfather">
+          <p-fieldset legend="Stock" [toggleable]="true">
+            <table  align="center">
+              <br/>
+
+                Title <input type="text" name="username" [(ngModel)]="csv.nomdoc"><br/><br/>
+                Taille <input type="text" name="taille" [(ngModel)]="csv.taille"><br/><br/>
+                 <input type="hidden" name="username" [(ngModel)]="csv.client_id"><br/><br/>
+                <input type="file" accept=".csv"  accept=".xlsx"  name="filetoupload" (change)="onFileChange($event)" multiple/><br/><br/>
+                <p-button icon="pi pi-check" iconPos="right" label="Valid" (click)="validStockPackage()"></p-button>
+                <button pButton type="button" label="Upload" icon="pi pi-upload" class="ui-button-success" (click)="save()" ></button>
+
+               <br/>
+              </table>
+          </p-fieldset>
+        </p-panel>
+    </div>
+</div>
+
+
+</div>
+</body>
+
+
+
+
+

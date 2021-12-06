@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content white-text">
+                <div class="row">
+          <div class="col s5">
+            <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
+              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="clientService.selectedClient._id">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="name" #name="ngModel" [(ngModel)]="clientService.selectedClient.name" placeholder="Enter full name" required>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="username" #name="ngModel" [(ngModel)]="clientService.selectedClient.username" placeholder="Enter unsername"  required>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="password" #name="ngModel" [(ngModel)]="clientService.selectedClient.password" placeholder="Enter password"  required>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="phone" #name="ngModel" [(ngModel)]="clientService.selectedClient.phone" placeholder="Enter phone number"  required>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="email" #name="ngModel" [(ngModel)]="clientService.selectedClient.email" placeholder="Enter email"  required>
+
+                </div>
+              </div>
+
+
+               <div class="row">
+                  <div class="input-field col s12">
+                    <button class="btn btn-custom right" type="button" (click)="resetForm(clientForm)">Reset</button>
+                    <button class="btn btn-custom right" type="submit" [disabled]="!clientForm.valid">Submit</button>
+                  </div>
+                </div>
+            </form>
+          </div>
+          <div class="col s7">
+              <table class="responsive-table highlight">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Username</th>
+                      <th>Password</th>
+                      <th>Phone</th>
+                      <th>Email</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tr *ngFor="let emp of clientService.clients">
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.username}}</td>
+                    <td>{{emp.password}}</td>
+                    <td>{{emp.phone}}</td>
+                    <td>{{emp.email}}</td>
+                    <td>
+                        <a class="action-btn" (click)="onEdit(emp)">
+                          <i class="material-icons">edit</i>
+                        </a>
+                        <a class="action-btn" (click)="onDelete(emp._id,clientForm)">
+                          <i class="material-icons">delete</i>
+                        </a>
+
+
+                         <a class="action-btn" (click)="select(emp)">
+                          <i class="material-icons">
+                            alarm_on</i>
+                        </a>
+                      </td>
+                  </tr>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
+<div class="p-grid p-justify-center">
+  <p-card  [style]="{width: '500px'}">
+<!-- Default form contact -->
+<form *ngIf=clt class="text-center border border-light p-5" [formGroup]="contactForm" (ngSubmit)="mail()">
+
+  <p class="h4 mb-4">Notify Client</p>
+
+  <!-- Name -->
+  <input type="text" formControlName="contactFormName" id="defaultContactFormName" mdbInput
+    class="form-control mb-4" placeholder="Name">
+
+  <!-- Email -->
+  <input type="email" formControlName="contactFormTOEmail" id="defaultContactFormEmail" mdbInput
+    class="form-control mb-4" placeholder="E-mail">
+
+  <!-- Subject -->
+  <label>Subject</label>
+  <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+    <option value="" disabled>Choose option</option>
+    <option value="1" selected>New account</option>
+    <option value="2">New Dashboard</option>
+  </select>
+
+  <!-- Message -->
+  <div class="form-group">
+    <textarea formControlName="contactFormMessage" class="form-control rounded-0" mdbInput id="exampleFormControlTextarea2"
+      rows="3" placeholder="Message"></textarea>
+  </div>
+
+  <!-- Copy -->
+  <div class="custom-control custom-checkbox mb-4">
+    <input formControlName="contactFormCopy" type="checkbox" class="custom-control-input" id="defaultContactFormCopy">
+    <label class="custom-control-label" for="defaultContactFormCopy">Send me a copy of this message</label>
+  </div>
+
+  <!-- Send button -->
+  <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect"
+    mdbWavesEffect type="submit" [disabled]="disabledSubmitButton">Send</button>
+
+</form>
+<!-- Default form contact -->
+</p-card>
+</div>

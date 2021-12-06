@@ -1,0 +1,30 @@
+//require('rootpath')();
+const express = require('express');
+var app = express();
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const { mongoose } = require('./db.js');
+var clientController = require('./controllers/clientController.js');
+var csvController = require('./controllers/csvController.js');
+var dashboardController = require('./controllers/dashboardController.js');
+var emailController = require('./controllers/emailController.js');
+var csvValidController = require('./controllers/csvValidController.js');
+
+const http = require('http');
+const jwt = require('./_helpers/jwt');
+const errorHandler = require('./_helpers/error-handler');
+const multer = require('multer');
+fs = require('fs');
+// global error handler
+app.use(errorHandler);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+//app.use(jwt(secret: 'ad123123A@!@#ADAsdad@#!@'));
+app.use(cors({ origin: 'http://localhost:4200' }));
+app.listen(3000, () => console.log('Server started at port : 3000'));
+app.use('/clients', clientController);
+app.use('/csv', csvController);
+app.use('/dashboard', dashboardController);
+app.use('/email', emailController);
+app.use('/csv_valid',csvValidController);
+app.use('/clients', require('./users/users.controller'));

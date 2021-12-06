@@ -1,0 +1,31 @@
+
+.btn {
+  border: 2px solid white;
+  color: white;
+  background-color: gray;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.color
+{
+  background-color: white;
+}
+
+.bt{
+  border: 5px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+body {
+  background: url(../../../assets/img/hh.jpg);
+   height: 800px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}

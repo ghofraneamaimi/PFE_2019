@@ -1,0 +1,29 @@
+
+<body>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <div class="bg"></div>
+<br><br><br><br>
+<div style="text-align:center;">
+<table mdbTable >
+    <thead class="table table-dark">
+        <tr >
+          <th  *ngFor="let head of headElements" scope="col" >{{head}} </th>
+        </tr>
+      </thead>
+      <tbody>
+  <tr class="center" mdbTableCol *ngFor="let e of t">
+    <td>{{ e.nomdoc }}</td>
+    <td>{{ e.dateupload }}</td>
+    <td>   <a class="action-btn" (click)="deleteCsv(e)">
+        <i class="material-icons">
+            delete</i>
+      </a>
+
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+</body>

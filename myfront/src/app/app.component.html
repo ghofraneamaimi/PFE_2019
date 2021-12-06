@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <a class="navbar-brand" href="#">MyApp</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" routerLink="/home" routerLinkActive="active">home</a>
+      <a class="nav-item nav-link " routerLink="/login" routerLinkActive="active">Login</a>
+      <a class="nav-item nav-link " routerLink="/Csvs" routerLinkActive="active">CSVUpload</a>
+      <a class="nav-item nav-link " routerLink="/Dashboards" routerLinkActive="active">DashDownload</a>
+      <a class="nav-item nav-link " routerLink="/info" routerLinkActive="active">Hi Client!</a>
+      <a class="nav-item nav-link " routerLink="/csvadmin" routerLinkActive="active">admincAllCsv</a>
+      <a class="nav-item nav-link " routerLink="/csvDownloadAdmin" routerLinkActive="active">admindownCsv</a>
+      <a class="nav-item nav-link " routerLink="/pushdata" routerLinkActive="active">Push Data</a>
+      <a class="nav-item nav-link " routerLink="/CRUD" routerLinkActive="active">Hi Admin!</a>
+      <a class="nav-item nav-link " routerLink="/uploaddashboard" routerLinkActive="active">adminUploadDash</a>
+      <a class="nav-item nav-link" (click)="logout()">Logout</a>
+
+    </div>
+  </div>
+</nav>
+
+<router-outlet> </router-outlet>

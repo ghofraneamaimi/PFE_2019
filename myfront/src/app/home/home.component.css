@@ -1,0 +1,11 @@
+body {
+  background: url(../../assets/img/hh.jpg);
+   height: 750px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.a
+{
+  font-size: 150% ;
+}

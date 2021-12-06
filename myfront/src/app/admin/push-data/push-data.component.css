@@ -1,0 +1,18 @@
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+table, th, td {
+  border: 1px solid black;
+}
+body {
+  background: url(../../../assets/img/hh.jpg);
+   height: 710px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.color {
+  background-color: white;
+}

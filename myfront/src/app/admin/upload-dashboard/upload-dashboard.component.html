@@ -1,0 +1,50 @@
+<body>
+    <div class="bg"></div>
+<br><br>
+<table  mdbTable>
+    <thead class="table table-dark">
+    <tr >
+        <th *ngFor="let head of headElements" scope="col" >{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+  <tr class="color" mdbTableCol *ngFor="let e of c">
+    <td>{{ e.name }}</td>
+    <td>{{ e.username }}</td>
+    <td>
+        <button pButton type="button" label="Upload" icon="pi pi-upload" class="ui-button-success"  *ngIf='ndash' (click)="select(e)"></button>
+
+    </td>
+</tbody>
+</table>
+<br><br><br>
+<div class="p-grid p-justify-center"  *ngIf="clt">
+    <p-card  [style]="{width: '500px'}">
+
+    <div><table align="center" style="text-align: center"   >
+        <br><br>
+       Title <input type="text" name="username" [(ngModel)]="dashboard.nomdash"><br/><br/>
+          Taille <input type="text" name="taille" [(ngModel)]="dashboard.taille"><br/><br/>
+         <input type="hidden" name="username" [(ngModel)]="dashboard.client_id">
+         <input type="file" name="filetoupload" (change)="onFileChange($event)" multiple/><br/><br/>
+         <button pButton type="button" label="Upload" icon="pi pi-upload" class="ui-button-success"  (click)="save()" ></button>
+     <br/><br/>
+        </table></div>
+</p-card>
+</div>
+
+</body>
+
+<!--<table *ngIf="clt" align="center" border=2>
+    <div >
+      <form method="post"  enctype="multipart/form-data"><br/><br/>
+        Nom <input type="text" name="csv[nomdoc]" /><br/><br/>
+        Taille <input type="number" name="csv[taille]" /><br/><br/>
+        <input type="hidden" name="csv[client_id]" /><br/>
+        <input type="file" name="filetoupload"><br/><br/>
+        <button class="btn" type="submit" (click)="onSubmit()">Upload </button><br/><br/>
+      </form>
+    </div>
+
+</table>-->
+

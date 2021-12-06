@@ -1,0 +1,17 @@
+
+.bt{
+  border: 5px solid #337ab7 ;
+  color: white;
+  background-color: #337ab7;
+  padding: 10px 20px;
+  /*border-radius: 10px;*/
+  font-size: 35px;
+  /*font-weight: bold;*/
+}
+/*table,td {
+
+  padding: 10px;
+}*/
+body {
+  background-color: azure
+}

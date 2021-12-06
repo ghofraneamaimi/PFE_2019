@@ -1,0 +1,45 @@
+
+<body>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <div class="bg"></div>
+<br><br>
+<br><table  mdbTable>
+    <thead class="table table-dark">
+    <tr >
+        <th *ngFor="let head of headElements" scope="col" >{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+  <tr class="color" mdbTableCol *ngFor="let e of c">
+    <td>{{ e.name }}</td>
+    <td>{{ e.login }}</td>
+    <td>   <p-button icon="pi pi-check" iconPos="right" label="Csv" *ngIf='ncsv' (click)="onSubmit(csvs)"></p-button>
+
+    <div *ngFor="let c of csvs" >
+      {{ c.nomdoc }}
+      <a href="{{download(c.filename)}}">
+          <i class="material-icons" style="font-size: 20px;">
+            get_app
+            </i></a>
+
+  </div>
+  </td>
+</tbody>
+</table>
+</body>
+  <!--  <table  mdbTable >
+      <thead class="table table-dark">
+        <tr >
+          <th *ngFor="let head of headElements" scope="col" >{{head}} </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr mdbTableCol *ngFor="let e of t">
+             <td>{{ e.nomdoc }}</td>
+          <td>{{ e.dateupload }}</td>
+
+        </tr>
+      </tbody>
+    </table>-->
